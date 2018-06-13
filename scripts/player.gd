@@ -5,8 +5,11 @@ const MAX_SLOPE_ANGLE = 40
 export(float) var mouse_x_sensitivity_factor = 0.08
 export(float) var mouse_y_sensitivity_factor = 0.08
 
-export(float) var movement_speed_factor = 15
-export(float) var acceleration_speed_factor = 15
+export(float) var movement_speed_factor = 4
+export(float) var acceleration_speed_factor = 0.7
+
+export(float) var sprint_speed_factor = 3.4
+export(float) var sprint_acceleration_factor = 1.6
 
 
 var EVENT_HANDLERS = {}
@@ -39,8 +42,9 @@ func _exit_scene():
 
 
 func _physics_process(delta):
-	var destination
+	var acceleration_speed
 	var actual_velocity
+	var destination
 
 	# Normalize movement direction
 	movement = movement.normalized()
@@ -50,8 +54,14 @@ func _physics_process(delta):
 
 	# Calculate our movement velocity
 	destination = movement * movement_speed_factor
+	
+	acceleration_speed = acceleration_speed_factor
+	
+	if Input.is_key_pressed(KEY_SHIFT):
+		actual_velocity *= sprint_speed_factor
+		acceleration_speed *= sprint_acceleration_factor
 
-	actual_velocity = actual_velocity.linear_interpolate(movement, delta * acceleration_speed_factor)
+	actual_velocity = actual_velocity.linear_interpolate(movement, delta * acceleration_speed)
 
 	self.move_and_slide(actual_velocity, Vector3(0, movement_speed_factor, 0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE))
 
