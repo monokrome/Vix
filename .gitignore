@@ -1,0 +1,51 @@
+# Collada artifacts from compiling .blend files
+*.dae
+
+# Godot import files
+*.import
+
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp 
+
+# Precompiled Headers
+*.gch
+*.gen.h
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Hidden files
+.*
+
+# Allow git configurations
+!.git*
+
+# Allow GoDot configurations
+!.gd*

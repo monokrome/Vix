@@ -1,0 +1,12 @@
+config_version=3
+
+
+[application]
+
+config/name="Vix"
+config/icon="res://images/splash.png"
+
+
+[rendering]
+
+environment/default_environment="res://environments/default.tres"
