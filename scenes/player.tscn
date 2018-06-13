@@ -21,12 +21,16 @@ axis_lock_angular_y = false
 axis_lock_angular_z = false
 collision/safe_margin = 0.001
 script = ExtResource( 1 )
+gravity = -3
 mouse_x_sensitivity_factor = 0.08
 mouse_y_sensitivity_factor = 0.08
 movement_speed_factor = 4
 acceleration_speed_factor = 0.7
+in_air_acceleration_factor = 0.02
 sprint_speed_factor = 3.4
 sprint_acceleration_factor = 1.6
+max_in_air_jumps = 2
+jump_velocity = 75.0
 
 [node name="Viewpoint" type="Camera" parent="." index="0"]
 
