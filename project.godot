@@ -1,12 +1,35 @@
-config_version=3
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
 
+config_version=3
 
 [application]
 
 config/name="Vix"
+run/main_scene="res://scenes/universe.tscn"
+boot_splash/image="res://images/splash.png"
 config/icon="res://images/splash.png"
 
+[display]
+
+window/size/test_width=320
+window/size/test_height=240
+window/dpi/allow_hidpi=true
+window/stretch/aspect="keep_width"
+
+[logging]
+
+file_logging/enable_file_logging=true
+file_logging/log_path="user://vix/vix.log"
+file_logging/max_log_files=3
 
 [rendering]
 
+threads/thread_model=2
+environment/default_clear_color=Color( 1, 1, 1, 1 )
 environment/default_environment="res://environments/default.tres"
