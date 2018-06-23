@@ -1,6 +1,6 @@
 extends Node
 
-onready var Voxel = preload('res://scripts/voxel.gd')
+onready var VoxelPlane = preload('res://scripts/voxel_plane.gd')
 
 func _ready():
-	self.add_child(Voxel.new())
+	self.add_child(VoxelPlane.new())
